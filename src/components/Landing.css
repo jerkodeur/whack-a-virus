@@ -1,5 +1,5 @@
 .accueil{
-    background-image: url(./image/asfalt-light.png);
+    padding-top:30px
 }
 
 .name{
@@ -33,6 +33,7 @@ label{
 }
 
 button{
+    width: 90px;
     font-size: medium;
     font-weight: 900;
     background-color: rgb(76, 235, 156);
