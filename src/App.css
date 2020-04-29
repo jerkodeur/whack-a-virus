@@ -1,1 +1,6 @@
-
+.App{
+    background-color: #73788c;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    text-align: center;
+    min-height: 100vh;
+}
