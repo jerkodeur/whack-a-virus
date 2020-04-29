@@ -1,7 +1,7 @@
 import React from "react";
 import {Route, Switch} from 'react-router-dom'
 
-import Story from "./components/Story";
+import Rules from "./components/Rules";
 
 import "./App.css";
 
@@ -14,7 +14,7 @@ class App extends React.Component {
       
       <div className="App">
         
-        <Story />
+        <Rules />
         <Switch>
           <Route exact path='/' /*{Landing}*//>
         </Switch>
