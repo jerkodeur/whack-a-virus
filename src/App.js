@@ -2,6 +2,7 @@ import React from "react";
 import LifeBar from "./components/LifeBar";
 import "./App.css";
 import {Route, Switch} from 'react-router-dom'
+import Game from './components/Game'
 
 class App extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' /*{Landing}*//>
         </Switch>
+        <Game/>
       </div>      
   )}
 }

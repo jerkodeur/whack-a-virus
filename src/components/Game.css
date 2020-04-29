@@ -1,64 +1,46 @@
-*,::after,::before {
-    box-sizing: border-box;
-  }
-  
-  .container {
-    width: 600px;
-    height:600px;
-    position:relative;
-  }
-  .rectangle {
-    width:100%;
-    height:75%;
-    background-color: #111;
-    postion:relative;
-    padding:1%;
-  }
-  .circle {
-    width:100px;
-    height:100px;
-    position:absolute;
-    background-color: green;
-    border-radius:50%;
-  
-  }
-  .circle2 {
-    width:100px;
-    height:100px;
-    position:absolute;
-    background-color: orange;
-    border-radius:50%;
-  }
-  
-  .container2{}
-  
-  .life {
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.areaGame {
+  width: 600px;
+  height: 600px;
+  position: relative;
+
+}
+
+.rectangle {
+  width: 100%;
+  height: 75%;
+  background-color: #111;
+  position: relative;
+  padding: 1%;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.circle2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.containerGame{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    height:250px;
-    width:25px;
-    border-radius: 10px;
-    background-color:green;
-    position:relative;
-    padding-bottom: 2px;
-  }
-  .realLife {
-    border-radius: 10px;
-    height:60%;
-    width:66%;
-    position:absolute;
-    background-color:blue;
-    z-index:10
-  }
-  .bullet {
-    background-color: blue;
-    border-radius: 50%;
-    position:absolute;
-    width:40px;
-    height:40px;
-    top:230px;
-    border: 5px solid green;
-    border-top:none;
-    z-index:0;
-  }
+    align-items: center;
+    height:100%;
+}
+
+.empty {
+  height:200px;
+}
