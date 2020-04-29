@@ -12,11 +12,15 @@ class Accueil extends React.Component {
             sessionStorage.setItem('name',value)
         }
     return (
-        <div className="name">               
-                <label htmlfor="name">What your name?</label>
-                <input type="text" id="name" name="name" required onChange={handleChange}/>  
-                <Link to="/"><button>Go!</button></Link> 
-                <Call/>                  
+        <div>
+            <h1>Welcolme</h1>
+            <div className="name"> 
+                                
+                    <label htmlfor="name">What your name?</label>
+                    <input type="text" id="name" name="name" required onChange={handleChange}/>  
+                    <Link to="/"><button>Go!</button></Link> 
+                    {/* <Call/>                   */}
+            </div>
         </div>
         )
     }

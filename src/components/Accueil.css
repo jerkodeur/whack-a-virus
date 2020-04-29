@@ -1,3 +1,7 @@
+.accueil{
+    background-image: url(./image/asfalt-light.png);
+}
+
 .name{
     border: solid 2px black;
     margin:  0 auto ;
@@ -11,6 +15,7 @@
     justify-content: center ;
     margin-top: 50px;
     font-size: larger;
+    
 }
 
 input{
