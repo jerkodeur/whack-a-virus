@@ -1,0 +1,37 @@
+.endGame{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rvb (0,0,0, 0,8);
+    position: relative;
+    top: 0;
+    left: 0;
+
+}
+
+.modal{
+   margin-top: 80px;
+   width: 480px;
+    height: 300px;
+    background-color: silver;
+    
+
+}
+
+.text{
+    margin-top: 45px;
+    font-size: 30px;
+    color: black;
+}
+
+.submit{
+    margin-top: 70px;
+    padding: 10px;
+    border-radius: 2em;
+    
+}
+.submit:hover{
+    background-color: whitesmoke;
+}
