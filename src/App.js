@@ -1,23 +1,28 @@
-import React from 'react';
-import './App.css';
-import Accueil from './components/Accueil'
-import {Route,Switch} from 'react-router-dom'
-import Endgame from './components/Endgame'
-import LifeBar from "./components/LifeBar";
-import Game from './components/Game'
+import React from "react";
+import {Route, Switch} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <Endgame />
-      <Switch>
-        {/* <Route exact path="/">
-          <Accueil />  
-        </Route> */}
+import Game from './components/Game'
+import Landing from './components/Landing'
+import Rules from './components/Rules'
+import Story from './components/Story'
+
+import "./App.css";
+
+class App extends React.Component {
+
+  render() {
+    
+    return( 
+      <div className="App">
         
-      </Switch>
-    </div>
-  );
+        <Switch>
+          <Route exact path='/' component={Landing}/>
+          <Route path='/story' component={Story}/>
+          <Route path='/rules' component={Rules}/>
+          <Route path='/level-1' component={Game}/>
+        </Switch>
+      </div>      
+  )}
 }
 
 
