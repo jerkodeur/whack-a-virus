@@ -4,9 +4,9 @@ import axios from 'axios';
 
 class Call extends React.Component {
 
-        state = {
-            image: ""
-        }
+    state = {
+        image: ""
+    }
 
     getImage() {
         const random = Math.floor(Math.random() * 10)
@@ -24,7 +24,7 @@ class Call extends React.Component {
     componentDidMount() {
         this.getImage()
     }
-    
+
     render() {
         console.log(this.state.image)
         return (

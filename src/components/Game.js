@@ -18,6 +18,7 @@ class Game extends React.Component {
 
     state = {
         circle: '',
+        circle2: '',
         rectangle:'',
         rectWidth: 0,
         rectHeight: 0,
@@ -28,31 +29,30 @@ class Game extends React.Component {
     definePosition = () => {
         const maxX = this.state.rectWidth - this.state.circleWidth
         const maxY = this.state.rectHeight - this.state.circleHeight
-        // return `maxX = ${maxX}, maxY= ${maxY}`
         const posX = Math.random() * maxX
         const posY = Math.random() * maxY
-        // const posX2 = Math.random() * maxX
-        // const posY2 = Math.random() * maxY
-        // return `posX= ${posX}, posY= ${posY}, posX2= ${posX2}, posY2= ${posY2}`
+        const posX2 = Math.random() * maxX
+        const posY2 = Math.random() * maxY
         const circle1 = this.state.circle
-        //const circle2 = this.state.circle
-        const newTop = circle1.offsetTop + posY
-        return `newTop: ${newTop} ,top: ${circle1.offsetTop},left: ${circle1.offsetLeft}`
-        // circle1.left = posX + 'px'
-        // circle1.top = posY + 'px'
-        // // circle2.style.left = posX2 + 'px'
-        // // circle2.style.top = posY2 + 'px'
+        const circle2 = this.state.circle2
+        if (circle1) { circle1.style.left = `${posX}px`  }
+        if (circle1) { circle1.style.top = `${posY}px` }
+        if (circle2) { circle2.style.left = `${posX2}px` }
+        if (circle2) { circle2.style.top = `${posY2}px` }
     }
+
+
 
     componentDidMount() {
         const rectangle = document.getElementById("rectangle")
         const circle = document.getElementById("circle")
+        const circle2 = document.getElementById("circle2")
         const rectWidth = parseFloat(getComputedStyle(rectangle).width)
         const rectHeight = parseFloat(getComputedStyle(rectangle).height)
         const circleWidth = parseFloat(getComputedStyle(circle).width)
         const circleHeight = parseFloat(getComputedStyle(circle).height)
-        this.setState({circle: circle, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight})
-
+        this.setState({ circle: circle, circle2: circle2, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight })
+        setInterval(this.definePosition, 1000)
     }
 
     render() {
