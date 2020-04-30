@@ -1,6 +1,7 @@
 import React from "react";
 
 import LifeBar from "./components/LifeBar";
+import { Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
@@ -55,6 +56,9 @@ class App extends React.Component {
           lifeBarColor={this.state.lifeBarColor}
           getHealth={this.getHealth}
         />
+        <Switch>
+          <Route exact path="/" /*{Landing}*/ />
+        </Switch>
       </div>
     );
   }
