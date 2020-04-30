@@ -17,10 +17,10 @@ class Rules extends React.Component {
             you will have to click on it in order to stop it from spreading.
           </p>
           <p>
-            mportant : keep an eye on the power bar, on your right : it
-            indicates how infected the zone is. Its level grows pretty quickly,
+            Important : keep an eye on the power bar, on your right : it
+            indicates how infected the zone is. It's level grows pretty quickly,
             so don’t waste any time and chase this virus before the bar reaches
-            its maximum…
+            it's maximum…
           </p>
           <p>Once the bar down, the area is safe, and you can access to the next level.</p>
           <Link to="/level-1">
