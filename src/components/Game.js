@@ -65,8 +65,18 @@ class Game extends React.Component {
         if (circle2) { circle2.style.top = `${posY2}px` }
     }
 
+    // interval(){
 
-    componentDidMount() {
+    //     const interPos = 
+    //     if(this.state.health === 100 || this.state.heatlh === 7) {clearInterval(interPos); console.log('stop')}
+    // }
+
+    // componentDidMount() {
+    //     this.Start()
+    //     this.interval()
+    // }
+
+    Start(){
         const rectangle = document.getElementById("rectangle")
         const circle = document.getElementById("circle")
         const circle2 = document.getElementById("circle2")
@@ -75,9 +85,13 @@ class Game extends React.Component {
         const circleWidth = parseFloat(getComputedStyle(circle).width)
         const circleHeight = parseFloat(getComputedStyle(circle).height)
         this.setState({ circle: circle, circle2: circle2, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight })
-        setInterval(this.definePosition, 2000)
+        setInterval(this.definePosition, 750)
+        setInterval(this.permanentDecrease, 250)       
+    }
 
-        setInterval(this.permanentDecrease, 1000)
+    handle = () => {
+        this.Start()
+        console.log('start')
     }
 
     handleClick = (e) => {
@@ -90,6 +104,7 @@ class Game extends React.Component {
     permanentDecrease = () => {
         this.state.health < 100 && this.setState({ health: this.state.health + 1 })
         this.state.health === 100 && this.setState({ win: 'perdu' })
+        
     }
     // Increase the health permanently until 100
     increaseHealth = () => {
@@ -99,20 +114,18 @@ class Game extends React.Component {
     // Decrease the health if click on the monster
     decreaseHealth = () => {
         this.state.health >= 27
-            ? this.setState({ health: this.state.health - 10 })
+            ? this.setState({ health: this.state.health - 20 })
             : this.setState({ health: 7 });
         // this.state.health === 7 && this.setState({ win: 'gagné' })
         console.log(this.state.health)
     };
 
     render() {
-
-        //const circleWidth = parseFloat(getComputedStyle(circle).width)
-
+        
         const image = 'https://cdn.pixabay.com/photo/2018/02/12/10/10/figure-3147899_960_720.jpg'
         return (
             <div className="containerGame">
-                <div className="empty"></div>
+                
                 <div className="flex">
                     <div className="areaGame">
                         <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${image})` }}>
@@ -124,13 +137,10 @@ class Game extends React.Component {
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />
                 </div>
-                <div>{this.definePosition()}</div>
-                <h1>{this.state.health}</h1>
-                <p>{this.state.win === 'perdu' ? "Perdu!!!" : this.state.win === "gagné" && "Gagné!!!"}</p>
+                <button onClick={this.handle} >Start</button>
             </div>
         )
     }
-
 }
 
 export default Game

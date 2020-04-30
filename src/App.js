@@ -5,7 +5,7 @@ import Game from './components/Game'
 import Landing from './components/Landing'
 import Rules from './components/Rules'
 import Story from './components/Story'
-
+import Call from './components/Call'
 import "./App.css";
 
 class App extends React.Component {
@@ -14,7 +14,7 @@ class App extends React.Component {
     
     return( 
       <div className="App">
-        
+      
         <Switch>
           <Route exact path='/' component={Landing}/>
           <Route path='/story' component={Story}/>

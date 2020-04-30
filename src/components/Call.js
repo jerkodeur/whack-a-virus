@@ -16,7 +16,7 @@ class Call extends React.Component {
             .then(res => {
                 console.log(res.data.hits)
                 this.setState({
-                    image: res.data.hits[random].largeImageURL
+                    image: res.data.hits[random].pageURL
                 })
             })
     }
