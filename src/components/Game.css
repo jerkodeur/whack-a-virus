@@ -6,7 +6,6 @@
   width: 800px;
   height: 800px;
   position: relative;
-
 }
 
 .rectangle {
@@ -21,30 +20,30 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  background-color: green;
+  /* background-color: green; */
   border-radius: 50%;
 }
 
 .circle2 {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: 75px;
   position: absolute;
-  background-color: orange;
+  /* background-color: orange; */
   border-radius: 50%;
 }
 
-.containerGame{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:100%;
+.containerGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .empty {
-  height:200px;
+  height: 200px;
 }
 
-.flex{
-    display:flex;
+.flex {
+  display: flex;
 }
