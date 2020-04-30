@@ -1,8 +1,9 @@
 import React from 'react'
+import axios from 'axios'
 import LifeBar from './LifeBar'
-import Call from './Call'
 import corona from './images/coronavirus.png'
 import anticorps from './images/anticorps.png'
+import Endgame from './Endgame'
 
 
 // const maxX = rectWidth - (circleWidth)
@@ -50,6 +51,10 @@ class Game extends React.Component {
         }
     }
 
+    reload = () => {
+        this.setState({ health: 37, win: '', lifeBarColor: "" })
+    }
+
     definePosition = () => {
         const maxX = this.state.rectWidth - this.state.circleWidth
         const maxY = this.state.rectHeight - this.state.circleHeight
@@ -65,18 +70,21 @@ class Game extends React.Component {
         if (circle2) { circle2.style.top = `${posY2}px` }
     }
 
-    // interval(){
+    componentDidMount() {
+        const random = Math.floor(Math.random() * 10)
+        console.log(random)
+        const url = "https://pixabay.com/api/?key=16287940-74526e304b3319cdff6dba577&q=city-war&image_type=photo"
+        axios.get(url)
+            .then(res => {
+                console.log(res.data.hits)
+                this.setState({
+                    image: res.data.hits[random].largeImageURL
+            })
+        })
+    }
 
-    //     const interPos = 
-    //     if(this.state.health === 100 || this.state.heatlh === 7) {clearInterval(interPos); console.log('stop')}
-    // }
 
-    // componentDidMount() {
-    //     this.Start()
-    //     this.interval()
-    // }
-
-    Start(){
+    Start(){        
         const rectangle = document.getElementById("rectangle")
         const circle = document.getElementById("circle")
         const circle2 = document.getElementById("circle2")
@@ -91,7 +99,6 @@ class Game extends React.Component {
 
     handle = () => {
         this.Start()
-        console.log('start')
     }
 
     handleClick = (e) => {
@@ -108,13 +115,13 @@ class Game extends React.Component {
     }
     // Increase the health permanently until 100
     increaseHealth = () => {
-        this.state.health <= 80 && this.setState({ health: this.state.health + 10 })
+        this.state.health <= 90 ? this.setState({ health: this.state.health + 10 }) : this.setState({ health: 100 })
         // this.state.health === 100 && this.setState({ win: 'perdu' })
     };
     // Decrease the health if click on the monster
     decreaseHealth = () => {
-        this.state.health >= 27
-            ? this.setState({ health: this.state.health - 20 })
+        this.state.health >= 22
+            ? this.setState({ health: this.state.health - 15 })
             : this.setState({ health: 7 });
         // this.state.health === 7 && this.setState({ win: 'gagné' })
         console.log(this.state.health)
@@ -122,17 +129,16 @@ class Game extends React.Component {
 
     render() {
         
-        const image = 'https://cdn.pixabay.com/photo/2018/02/12/10/10/figure-3147899_960_720.jpg'
         return (
-            <div className="containerGame">
-                
+            <div className="containerGame">                
                 <div className="flex">
                     <div className="areaGame">
-                        <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${image})` }}>
+                        <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${this.state.image})` }}>
                             {/* <div className="circle" id="circle" style={{ backgroundImage: `url(${corona})` }} onClick={this.handleClick}><h2>up</h2></div> */}
                             <img className="circle" id="circle" src={anticorps} onClick={this.handleClick} alt="" />
                             {/* <div className="circle2" id="circle2" onClick={this.handleClick}><h3>down: {this.state.health}</h3></div> */}
                             <img className="circle2" id="circle2" src={corona} onClick={this.handleClick} alt="" />
+                            <Endgame verdict={this.state.win} reload={this.reload} />
                         </div>
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />
