@@ -1,0 +1,36 @@
+.container {
+  width: 40px;
+  height: 500px;
+  border: 5px solid black;
+  background-color: gray;
+  display: flex;
+  align-items: flex-end;
+  margin: 20px;
+  border-radius: 40px;
+  position: relative;
+  margin-left: 90px;
+}
+
+.health {
+  /* border: 3px solid black; */
+  background-color: green;
+  border-radius: 40px;
+  width: 100%;
+  height: 100%;
+  transition: width 0.4s ease-in;
+  position: absolute;
+  z-index: 2;
+}
+
+.bullet {
+  background-color: green;
+  border-radius: 50%;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 470px;
+  left: -15px;
+  border: 5px solid black;
+  border-top: none;
+  z-index: 0;
+}

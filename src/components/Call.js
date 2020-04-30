@@ -1,15 +1,11 @@
 import React from 'react';
-import './Call-api.css';
+import './Call.css';
 import axios from 'axios';
 
 class Call extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            image: ""
-        }
-        console.log('state',this.state.image)
-        this.getImage = this.getImage.bind(this)
+
+    state = {
+        image: ""
     }
 
     getImage() {
@@ -23,14 +19,13 @@ class Call extends React.Component {
                     image: res.data.hits[random].largeImageURL
                 })
             })
-        
     }
-    
+
     componentDidMount() {
         this.getImage()
     }
+
     render() {
-        
         console.log(this.state.image)
         return (
             <div className="App">
