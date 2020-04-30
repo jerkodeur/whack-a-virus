@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+
 import LifeBar from './LifeBar'
 import Call from './Call'
 import corona from './images/coronavirus.png'
@@ -65,7 +67,22 @@ class Game extends React.Component {
         if (circle2) { circle2.style.top = `${posY2}px` }
     }
 
+    getImage() {
+        const random = Math.floor(Math.random() * 10)
+        console.log(random)
+        const url = "https://pixabay.com/api/?key=16287940-74526e304b3319cdff6dba577&q=city-war&image_type=photo"
+        axios.get(url)
+            .then(res => {
+                console.log(res.data.hits)
+                this.setState({
+                    image: res.data.hits[random].largeImageURL
+                })
+            })
+    }
+
+
     componentDidMount() {
+        this.getImage()
         const rectangle = document.getElementById("rectangle")
         const circle = document.getElementById("circle")
         const circle2 = document.getElementById("circle2")
@@ -74,7 +91,7 @@ class Game extends React.Component {
         const circleWidth = parseFloat(getComputedStyle(circle).width)
         const circleHeight = parseFloat(getComputedStyle(circle).height)
         this.setState({ circle: circle, circle2: circle2, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight })
-        setInterval(this.definePosition, 900)
+        setInterval(this.definePosition, 2000)
 
         setInterval(this.permanentDecrease, 1000)
     }
@@ -108,17 +125,17 @@ class Game extends React.Component {
 
         //const circleWidth = parseFloat(getComputedStyle(circle).width)
 
-        const image = 'https://cdn.pixabay.com/photo/2018/02/12/10/10/figure-3147899_960_720.jpg'
+        // const image = 'https://cdn.pixabay.com/photo/2018/02/12/10/10/figure-3147899_960_720.jpg'
         return (
             <div className="containerGame">
                 <div className="empty"></div>
                 <div className="flex">
                     <div className="areaGame">
-                        <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${image})` }}>
+                        <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${this.state.image})` }}>
                             {/* <div className="circle" id="circle" style={{ backgroundImage: `url(${corona})` }} onClick={this.handleClick}><h2>up</h2></div> */}
-                            <img className="circle" id="circle" src={corona} onClick={this.handleClick} alt="" />
+                            <img className="circle" id="circle" src={anticorps} onClick={this.handleClick} alt="" />
                             {/* <div className="circle2" id="circle2" onClick={this.handleClick}><h3>down: {this.state.health}</h3></div> */}
-                            <img className="circle2" id="circle2" src={anticorps} onClick={this.handleClick} alt="" />
+                            <img className="circle2" id="circle2" src={corona} onClick={this.handleClick} alt="" />
                         </div>
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />

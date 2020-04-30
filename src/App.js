@@ -2,7 +2,9 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Game from "./components/Game";
-import LifeBar from "./components/LifeBar";
+import Landing from "./components/Landing";
+import Rules from "./components/Rules";
+import Story from "./components/Story";
 
 import "./App.css";
 
@@ -11,7 +13,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" /*{Landing}*/ />
+          <Route exact path="/" component={Landing} />
+          <Route path="/story" component={Story} />
+          <Route path="/rules" component={Rules} />
+          <Route path="/level-1" component={Game} />
         </Switch>
         <Game />
       </div>

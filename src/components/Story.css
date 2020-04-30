@@ -1,0 +1,32 @@
+.dialog-box {
+    padding-top: 50px;
+}
+
+.story-container{
+    border: solid 2px black;
+    margin:  0 auto ;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 250px;
+    background-color: rgba(17, 17, 201, 0.94);
+    font-weight: 900;
+    color:white;
+    justify-content: center ;
+    margin-top: 50px;
+    font-size: larger;
+    
+}
+
+button{
+    padding: 10px 0;
+    width: 200px;
+    font-size: medium;
+    font-weight: 900;
+    background-color: rgb(76, 235, 156);
+    border: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
