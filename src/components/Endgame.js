@@ -10,17 +10,16 @@ class Endgame extends React.Component {
 
 
 
-    win =()=>{
-        this.state.win===true
-         ? this.setState({text:"Yes! Well done, this level is complete !"})
-         : this.setState({text:"Too bad, the epidemic won and everybody died !!"})
-
+    win(){
+       
+          this.setState({text:"Yes! Well done, this level is complete !"})
+          this.setState({textButton:"Next Level"})
     }
 
-    winButton=()=>{
-        this.state.win===true
-        ? this.setState({textButton:"Next Level"})
-        : this.setState({textButton:"Try Again"})
+    lose(){
+       
+          this.setState({text:"Too bad, the epidemic won and everybody died !!"})
+          this.setState({textButton:"Try Again"})
     }
 
     
@@ -31,8 +30,8 @@ class Endgame extends React.Component {
             <div className="endGame">
 
                 <div className="modal">
-        <div className="text">{this.state.text}</div>
-                    <button className="submit">Next Level</button>
+                    <div className="text">{this.state.text}</div>
+                    <button className="submit">{this.state.textButton}</button>
                 </div>
 
 
