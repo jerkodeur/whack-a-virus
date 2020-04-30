@@ -15,7 +15,7 @@ class Story extends React.Component {
                                 
                     
                     <p>This is the year 2022, and a mortal virus has been active on our planet for the last 2 years.</p>
-                    <p>You’re the last hope of Humanity, and the United Nations missioned you to eradicate this plague which threats the last survivors...</p> 
+                    <p>{sessionStorage.getItem('name')}... You’re the last hope of Humanity, and the United Nations missioned you to eradicate this plague which threats the last survivors...</p> 
                     <Link to="/rules"><button>How it works...</button></Link> 
             </div>
         </div>
