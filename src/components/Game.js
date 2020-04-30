@@ -31,13 +31,15 @@ class Game extends React.Component {
         // return `maxX = ${maxX}, maxY= ${maxY}`
         const posX = Math.random() * maxX
         const posY = Math.random() * maxY
-        const posX2 = Math.random() * maxX
-        const posY2 = Math.random() * maxY
-        return `posX= ${posX}, posY= ${posY}, posX2= ${posX2}, posY2= ${posY2}`
-        //const circle1 = this.state.circle
+        // const posX2 = Math.random() * maxX
+        // const posY2 = Math.random() * maxY
+        // return `posX= ${posX}, posY= ${posY}, posX2= ${posX2}, posY2= ${posY2}`
+        const circle1 = this.state.circle
         //const circle2 = this.state.circle
-        // circle1.style.left = posX + 'px'
-        // circle1.style.top = posY + 'px'
+        const newTop = circle1.offsetTop + posY
+        return `newTop: ${newTop} ,top: ${circle1.offsetTop},left: ${circle1.offsetLeft}`
+        // circle1.left = posX + 'px'
+        // circle1.top = posY + 'px'
         // // circle2.style.left = posX2 + 'px'
         // // circle2.style.top = posY2 + 'px'
     }
