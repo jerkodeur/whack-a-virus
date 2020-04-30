@@ -16,7 +16,7 @@ class Landing extends React.Component {
                                 
                     <label htmlFor="name">What is your name?</label>
                     <input type="text" id="name" name="name" required onChange={handleChange}/>  
-                    <Link to="/context"><button>Go!</button></Link> 
+                    <Link to="/story"><button>Go!</button></Link> 
             </div>
         </div>
         )
