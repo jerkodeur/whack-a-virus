@@ -5,16 +5,6 @@ import corona from './images/coronavirus.png'
 import anticorps from './images/anticorps.png'
 import Endgame from './Endgame'
 
-
-// const maxX = rectWidth - (circleWidth)
-// const maxY = rectHeight - (circleHeight)
-
-// const definePosition = () => {
-
-// }
-
-// setInterval(definePosition, 750)
-
 import './Game.css'
 
 class Game extends React.Component {
@@ -32,6 +22,13 @@ class Game extends React.Component {
         lifeBarColor: "",
     }
 
+    constructor(props) {
+        super(props)
+
+        this.timer1 = null
+        this.timer2 = null
+    }
+
     //  change lifeBarColor
     changeColor = () => {
         this.state.health > 75
@@ -46,8 +43,20 @@ class Game extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (this.state.health !== prevState.health) {
             this.changeColor();
-            this.state.health === 100 ? this.setState({ win: 'perdu' }) : this.state.health === 7 && this.setState({ win: 'gagné' })
-            // if (this.state.health === 100 || this.state.health === 7) this.setState({ health: 37 })
+
+            if (this.state.health === 100) {
+                this.setState({ win: 'perdu' });
+
+                clearInterval(this.timer1);
+                clearInterval(this.timer2);
+            }
+
+            if (this.state.health === 7) {
+                this.setState({ win: 'gagné' });
+
+                clearInterval(this.timer1);
+                clearInterval(this.timer2);
+            }
         }
     }
 
@@ -79,12 +88,12 @@ class Game extends React.Component {
                 console.log(res.data.hits)
                 this.setState({
                     image: res.data.hits[random].largeImageURL
+                })
             })
-        })
     }
 
 
-    Start(){        
+    Start() {
         const rectangle = document.getElementById("rectangle")
         const circle = document.getElementById("circle")
         const circle2 = document.getElementById("circle2")
@@ -93,8 +102,9 @@ class Game extends React.Component {
         const circleWidth = parseFloat(getComputedStyle(circle).width)
         const circleHeight = parseFloat(getComputedStyle(circle).height)
         this.setState({ circle: circle, circle2: circle2, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight })
-        setInterval(this.definePosition, 1000)
-        setInterval(this.permanentDecrease, 250)       
+
+        this.timer1 = setInterval(this.definePosition, 1000)
+        this.timer2 = setInterval(this.permanentDecrease, 250)
     }
 
     handle = () => {
@@ -103,7 +113,6 @@ class Game extends React.Component {
 
     handleClick = (e) => {
         const id = e.target.id;
-        // console.log(this.state.health, "health");
         id === "circle"
             ? this.increaseHealth()
             : this.decreaseHealth();
@@ -111,26 +120,24 @@ class Game extends React.Component {
     permanentDecrease = () => {
         this.state.health < 100 && this.setState({ health: this.state.health + 1 })
         this.state.health === 100 && this.setState({ win: 'perdu' })
-        
+
     }
     // Increase the health permanently until 100
     increaseHealth = () => {
         this.state.health <= 90 ? this.setState({ health: this.state.health + 10 }) : this.setState({ health: 100 })
-        // this.state.health === 100 && this.setState({ win: 'perdu' })
     };
     // Decrease the health if click on the monster
     decreaseHealth = () => {
         this.state.health >= 22
             ? this.setState({ health: this.state.health - 15 })
             : this.setState({ health: 7 });
-        // this.state.health === 7 && this.setState({ win: 'gagné' })
         console.log(this.state.health)
     };
 
     render() {
-        
+
         return (
-            <div className="containerGame">                
+            <div className="containerGame">
                 <div className="flex">
                     <div className="areaGame">
                         <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${this.state.image})` }}>
@@ -143,7 +150,7 @@ class Game extends React.Component {
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />
                 </div>
-                <button id="start"onClick={this.handle} >Start</button>
+                <button id="start" onClick={this.handle} >Start</button>
             </div>
         )
     }
