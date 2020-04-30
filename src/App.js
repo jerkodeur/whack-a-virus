@@ -18,7 +18,6 @@ class App extends React.Component {
           <Route path="/rules" component={Rules} />
           <Route path="/level-1" component={Game} />
         </Switch>
-        <Game />
       </div>
     );
   }
