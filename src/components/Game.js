@@ -94,9 +94,10 @@ class Game extends React.Component {
         const circleWidth = parseFloat(getComputedStyle(circle).width)
         const circleHeight = parseFloat(getComputedStyle(circle).height)
         this.setState({ circle: circle, circle2: circle2, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight })
-        setInterval(this.definePosition, 2000)
+        setInterval(this.definePosition, 750)
 
-        setInterval(this.permanentDecrease, 1000)
+        setInterval(this.permanentDecrease, 250)
+        this.definePosition()
     }
 
     handleClick = (e) => {
@@ -117,8 +118,8 @@ class Game extends React.Component {
     };
     // Decrease the health if click on the monster
     decreaseHealth = () => {
-        this.state.health >= 27
-            ? this.setState({ health: this.state.health - 10 })
+        this.state.health >= 22
+            ? this.setState({ health: this.state.health - 15 })
             : this.setState({ health: 7 });
         // this.state.health === 7 && this.setState({ win: 'gagné' })
         console.log(this.state.health)
@@ -146,9 +147,7 @@ class Game extends React.Component {
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />
                 </div>
-                <div>{this.definePosition()}</div>
-                <h1>{this.state.health}</h1>
-                <p>{this.state.win === 'perdu' ? "Perdu!!!" : this.state.win === "gagné" && "Gagné!!!"}</p>
+                <div></div>
             </div>
         )
     }
