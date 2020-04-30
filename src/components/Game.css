@@ -1,0 +1,50 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+.areaGame {
+  width: 800px;
+  height: 800px;
+  position: relative;
+
+}
+
+.rectangle {
+  width: 100%;
+  height: 75%;
+  background-color: #111;
+  position: relative;
+  padding: 1%;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.circle2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.containerGame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}
+
+.empty {
+  height:200px;
+}
+
+.flex{
+    display:flex;
+}
