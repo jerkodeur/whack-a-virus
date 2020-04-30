@@ -3,6 +3,8 @@ import './App.css';
 import Accueil from './components/Accueil'
 import {Route,Switch} from 'react-router-dom'
 import Endgame from './components/Endgame'
+import LifeBar from "./components/LifeBar";
+import Game from './components/Game'
 
 function App() {
   return (
@@ -17,5 +19,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
