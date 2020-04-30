@@ -141,9 +141,7 @@ class Game extends React.Component {
                 <div className="flex">
                     <div className="areaGame">
                         <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${this.state.image})` }}>
-                            {/* <div className="circle" id="circle" style={{ backgroundImage: `url(${corona})` }} onClick={this.handleClick}><h2>up</h2></div> */}
                             <img className="circle" id="circle" src={anticorps} onClick={this.handleClick} alt="" />
-                            {/* <div className="circle2" id="circle2" onClick={this.handleClick}><h3>down: {this.state.health}</h3></div> */}
                             <img className="circle2" id="circle2" src={corona} onClick={this.handleClick} alt="" />
                             <Endgame verdict={this.state.win} reload={this.reload} />
                         </div>

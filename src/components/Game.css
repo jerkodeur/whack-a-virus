@@ -7,27 +7,32 @@
   height: 640px;
   position: relative;
   cursor: url('./images/cursor.png'), pointer;
-
 }
 
-#start{
-  margin-top:30px;
-  margin-right:100px
+#start {
+  margin-top: 30px;
+  margin-right: 100px
 }
 
 .circle {
   width: 100px;
   height: 100px;
   position: absolute;
-  /* background-color: green; */
   border-radius: 50%;
+}
+
+.circle:active {
+  box-shadow: 4px 4px 4px 4px rgb(236, 128, 56);
+}
+
+.circle2:active {
+  box-shadow: 4px 4px 4px 4px rgb(242, 48, 14);
 }
 
 .circle2 {
   width: 75px;
   height: 75px;
   position: absolute;
-  /* background-color: orange; */
   border-radius: 50%;
 }
 
