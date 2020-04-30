@@ -1,35 +1,39 @@
-.endGame{
-    display:flex;
+.endGame {
+    display: none;
     justify-content: center;
     align-content: center;
     width: 100%;
     height: 100%;
-    background-color: rvb (0,0,0, 0,8);
+    background-color: rvb (0, 0, 0, 0, 8);
     position: relative;
     top: 0;
     left: 0;
-
 }
 
-.modal{
-   margin-top: 80px;
-   width: 480px;
+.endGame.show {
+    display: flex;
+    z-index: 100;
+}
+
+.modal {
+    margin-top: 80px;
+    width: 480px;
     height: 300px;
     background-color: silver;
 }
 
-.text{
+.text {
     margin-top: 45px;
     font-size: 30px;
     color: black;
 }
 
-.submit{
+.submit {
     margin-top: 70px;
     padding: 10px;
-    border-radius: 2em;   
+    border-radius: 2em;
 }
 
-.submit:hover{
+.submit:hover {
     background-color: whitesmoke;
 }

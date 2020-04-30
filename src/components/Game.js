@@ -1,10 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-
 import LifeBar from './LifeBar'
-import Call from './Call'
 import corona from './images/coronavirus.png'
 import anticorps from './images/anticorps.png'
+import Endgame from './Endgame'
 
 
 // const maxX = rectWidth - (circleWidth)
@@ -50,6 +49,10 @@ class Game extends React.Component {
             this.state.health === 100 ? this.setState({ win: 'perdu' }) : this.state.health === 7 && this.setState({ win: 'gagné' })
             // if (this.state.health === 100 || this.state.health === 7) this.setState({ health: 37 })
         }
+    }
+
+    reload = () => {
+        this.setState({ health: 37, win: '', lifeBarColor: "" })
     }
 
     definePosition = () => {
@@ -109,7 +112,7 @@ class Game extends React.Component {
     }
     // Increase the health permanently until 100
     increaseHealth = () => {
-        this.state.health <= 80 && this.setState({ health: this.state.health + 10 })
+        this.state.health <= 90 ? this.setState({ health: this.state.health + 10 }) : this.setState({ health: 100 })
         // this.state.health === 100 && this.setState({ win: 'perdu' })
     };
     // Decrease the health if click on the monster
@@ -129,6 +132,7 @@ class Game extends React.Component {
         return (
             <div className="containerGame">
                 <div className="empty"></div>
+
                 <div className="flex">
                     <div className="areaGame">
                         <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${this.state.image})` }}>
@@ -136,7 +140,9 @@ class Game extends React.Component {
                             <img className="circle" id="circle" src={anticorps} onClick={this.handleClick} alt="" />
                             {/* <div className="circle2" id="circle2" onClick={this.handleClick}><h3>down: {this.state.health}</h3></div> */}
                             <img className="circle2" id="circle2" src={corona} onClick={this.handleClick} alt="" />
+                            <Endgame verdict={this.state.win} reload={this.reload} />
                         </div>
+
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />
                 </div>
