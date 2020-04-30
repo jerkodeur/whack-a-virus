@@ -14,8 +14,8 @@ class Story extends React.Component {
             <div className="story-container"> 
                                 
                     
-                    <p>This is the year 2022, and a mortal virus has been active on our planet for the last 2 years.</p>
-                    <p>{sessionStorage.getItem('name')}... You’re the last hope of Humanity, and the United Nations missioned you to eradicate this plague which threats the last survivors...</p> 
+                    <p>This is the year 2022, and a mortal virus has been active on our<br/> planet for the last 2 years.</p>
+                    <p><span id="name">{sessionStorage.getItem('name')}</span><br/>... You’re the last hope of Humanity, and the United Nations missioned you to eradicate this plague which threats the last survivors...</p> 
                     <Link to="/rules"><button>How it works...</button></Link> 
             </div>
         </div>

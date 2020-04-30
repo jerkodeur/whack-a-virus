@@ -1,5 +1,10 @@
 .accueil{
-    padding-top:30px
+    padding-top:30px;
+}
+
+.accueil h1{
+    font-size: 60px;
+    color: rgb(236, 91, 33);
 }
 
 .name{
@@ -7,22 +12,24 @@
     margin:  0 auto ;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 30%;
     height: 200px;
-    background-color: rgba(17, 17, 201, 0.94);
+    background-color:black;
     font-weight: 900;
     color:white;
     justify-content: center ;
     margin-top: 50px;
     font-size: larger;
-    
+    border-radius: 10px;
 }
+
+
 
 input{
     margin: 30px auto;
     padding: 5px;
     border-radius: 10px;
-    color: rgb(35, 185, 110);
+    color: rgb(236, 91, 33);
     font-size: medium;
     font-weight: 900;
 }
@@ -32,10 +39,11 @@ label{
     
 }
 
-button{
-    width: 90px;
+.accueil button{
+    width: 60px;
     font-size: medium;
     font-weight: 900;
-    background-color: rgb(76, 235, 156);
+    background-color: rgb(236, 91, 33);
     border: none;
+    border-radius: 10px;
 }
