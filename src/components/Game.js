@@ -93,7 +93,7 @@ class Game extends React.Component {
         const circleWidth = parseFloat(getComputedStyle(circle).width)
         const circleHeight = parseFloat(getComputedStyle(circle).height)
         this.setState({ circle: circle, circle2: circle2, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight })
-        setInterval(this.definePosition, 750)
+        setInterval(this.definePosition, 1000)
         setInterval(this.permanentDecrease, 250)       
     }
 
@@ -143,7 +143,7 @@ class Game extends React.Component {
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />
                 </div>
-                <button onClick={this.handle} >Start</button>
+                <button id="start"onClick={this.handle} >Start</button>
             </div>
         )
     }
