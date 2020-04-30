@@ -65,6 +65,7 @@ class Game extends React.Component {
         if (circle2) { circle2.style.top = `${posY2}px` }
     }
 
+
     componentDidMount() {
         const rectangle = document.getElementById("rectangle")
         const circle = document.getElementById("circle")
@@ -74,7 +75,7 @@ class Game extends React.Component {
         const circleWidth = parseFloat(getComputedStyle(circle).width)
         const circleHeight = parseFloat(getComputedStyle(circle).height)
         this.setState({ circle: circle, circle2: circle2, rectangle: rectangle, rectWidth: rectWidth, rectHeight: rectHeight, circleWidth: circleWidth, circleHeight: circleHeight })
-        setInterval(this.definePosition, 900)
+        setInterval(this.definePosition, 2000)
 
         setInterval(this.permanentDecrease, 1000)
     }
@@ -116,9 +117,9 @@ class Game extends React.Component {
                     <div className="areaGame">
                         <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${image})` }}>
                             {/* <div className="circle" id="circle" style={{ backgroundImage: `url(${corona})` }} onClick={this.handleClick}><h2>up</h2></div> */}
-                            <img className="circle" id="circle" src={corona} onClick={this.handleClick} alt="" />
+                            <img className="circle" id="circle" src={anticorps} onClick={this.handleClick} alt="" />
                             {/* <div className="circle2" id="circle2" onClick={this.handleClick}><h3>down: {this.state.health}</h3></div> */}
-                            <img className="circle2" id="circle2" src={anticorps} onClick={this.handleClick} alt="" />
+                            <img className="circle2" id="circle2" src={corona} onClick={this.handleClick} alt="" />
                         </div>
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />
