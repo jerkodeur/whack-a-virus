@@ -18,7 +18,7 @@ class Game extends React.Component {
         circleWidth: 0,
         circleHeight: 0,
         health: 37,
-        win: '',
+        gameOver: '',
         lifeBarColor: "",
     }
 
@@ -45,14 +45,14 @@ class Game extends React.Component {
             this.changeColor();
 
             if (this.state.health === 100) {
-                this.setState({ win: 'perdu' });
+                this.setState({ gameOver: 'lost' });
 
                 clearInterval(this.timer1);
                 clearInterval(this.timer2);
             }
 
             if (this.state.health === 7) {
-                this.setState({ win: 'gagné' });
+                this.setState({ gameOver: 'win' });
 
                 clearInterval(this.timer1);
                 clearInterval(this.timer2);
@@ -61,7 +61,7 @@ class Game extends React.Component {
     }
 
     reload = () => {
-        this.setState({ health: 37, win: '', lifeBarColor: "" })
+        this.setState({ health: 37, gameOver: '', lifeBarColor: "" })
     }
 
     definePosition = () => {
@@ -119,7 +119,7 @@ class Game extends React.Component {
     };
     permanentDecrease = () => {
         this.state.health < 100 && this.setState({ health: this.state.health + 1 })
-        this.state.health === 100 && this.setState({ win: 'perdu' })
+        this.state.health === 100 && this.setState({ gameOver: 'lost' })
 
     }
     // Increase the health permanently until 100
@@ -143,7 +143,7 @@ class Game extends React.Component {
                         <div className="rectangle" id="rectangle" style={{ backgroundImage: `url(${this.state.image})` }}>
                             <img className="circle" id="circle" src={anticorps} onClick={this.handleClick} alt="" />
                             <img className="circle2" id="circle2" src={corona} onClick={this.handleClick} alt="" />
-                            <Endgame verdict={this.state.win} reload={this.reload} />
+                            <Endgame verdict={this.state.gameOver} reload={this.reload} />
                         </div>
                     </div>
                     <LifeBar health={this.state.health} lifeBarColor={this.state.lifeBarColor} />

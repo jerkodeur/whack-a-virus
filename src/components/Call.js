@@ -1,5 +1,4 @@
 import React from 'react';
-import './Call.css';
 import axios from 'axios';
 
 class Call extends React.Component {

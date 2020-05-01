@@ -2,24 +2,23 @@
     padding-top: 50px;
 }
 
-.rules-container{
+.rules-container {
     border: solid 2px black;
-    margin:  0 auto ;
+    margin: 0 auto;
     padding: 30px;
     display: flex;
     flex-direction: column;
     width: 60%;
-    /* height: 350px; */
     background-color: black;
     font-weight: 900;
-    color:white;
-    justify-content: center ;
+    color: white;
+    justify-content: center;
     margin-top: 50px;
     font-size: larger;
     border-radius: 10px;
 }
 
-button{
+button {
     padding: 10px 0;
     width: 200px;
     font-size: medium;
@@ -29,10 +28,11 @@ button{
     border-radius: 10px;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
-.rules-title{
+
+.rules-title {
     color: rgb(236, 91, 33);
     font-size: 60px;
 }
