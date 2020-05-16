@@ -5,9 +5,9 @@ class Endgame extends React.Component {
 
     getModalText() {
         if (this.props.verdict === 'win') {
-            return 'You win !'
+            return 'You save the world !'
         }
-        return 'You lost !'
+        return 'You lose !'
     }
     getModalTextButton() {
         if (this.props.verdict === 'win') {
