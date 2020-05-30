@@ -4,7 +4,7 @@
 ## Description
 Premier __hackaton__ de ma vie de Dev, projet réalisé à la [wild Code School](https://www.wildcodeschool.com/fr-FR).  
 Un groupe de 8 devs en formation, __24h de code__ et un projet finalement assez abouti !  
-Un virus ravage notre planète depuis des années maintenant ! 
+Un virus ravage notre planète depuis des années maintenant !   
 Il est tant de lutter et de combattre afin d'enrayer le mal qu'il engendre ... 
 
 __Venez combattre et tester votre dextérité !__
