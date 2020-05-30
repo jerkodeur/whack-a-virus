@@ -10,4 +10,4 @@ Il est tant de lutter et de combattre afin d'enrayer le mal qu'il engendre ...
 __Venez combattre et tester votre dextérité !__
 
 ## A propos
-Retrouvez-nous sur Linkedin:[Stéphane](https://www.linkedin.com/in/st%C3%A9phane-bour/), [Julien](https://www.linkedin.com/in/julienrousseau-webdev/), [Paracelse](https://www.linkedin.com/in/paracelse-itoua/), [Tristan](https://www.linkedin.com/in/tristan-manaut/), [Jerko](https://www.linkedin.com/in/j%C3%A9r%C3%B4me-poti%C3%A9/) 
+Retrouvez-nous sur Linkedin: [Stéphane](https://www.linkedin.com/in/st%C3%A9phane-bour/), [Julien](https://www.linkedin.com/in/julienrousseau-webdev/), [Paracelse](https://www.linkedin.com/in/paracelse-itoua/), [Tristan](https://www.linkedin.com/in/tristan-manaut/), [Jerko](https://www.linkedin.com/in/j%C3%A9r%C3%B4me-poti%C3%A9/) 
